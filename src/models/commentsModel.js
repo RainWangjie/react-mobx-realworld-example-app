@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx';
 import agent from '../agent';
 
-export class CommentsStore {
+export class CommentsModel {
   @observable isCreatingComment = false;
   @observable isLoadingComments = false;
   @observable commentErrors = undefined;
@@ -9,7 +9,7 @@ export class CommentsStore {
   @observable comments = [];
 
   constructor(slug) {
-    this.articleSlug = articleSlug;
+    this.articleSlug = slug;
     this.loadComments();
   }
 
@@ -62,4 +62,4 @@ export class CommentsStore {
   }
 }
 
-export default new CommentsStore();
+export default CommentsModel;
