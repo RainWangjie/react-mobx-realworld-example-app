@@ -4,19 +4,20 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const CommentContainer = props => {
+  const { comments, commentErrors: errors, articleSlug: slug } = props.comments;
   if (props.currentUser) {
     return (
       <div className="col-xs-12 col-md-8 offset-md-2">
         <div>
-          <list-errors errors={props.errors} />
-          <CommentInput slug={props.slug} currentUser={props.currentUser} />
+          <list-errors errors={errors} />
+          <CommentInput slug={slug} currentUser={props.currentUser} />
         </div>
 
         <CommentList
-          comments={props.comments}
-          slug={props.slug}
+          comments={comments}
+          slug={slug}
           currentUser={props.currentUser}
-          onDelete={props.onDelete}
+          onDelete={comments.deleteComment}
         />
       </div>
     );
@@ -31,10 +32,10 @@ const CommentContainer = props => {
         </p>
 
         <CommentList
-          comments={props.comments}
-          slug={props.slug}
+          comments={comments}
+          slug={slug}
           currentUser={props.currentUser}
-          onDelete={props.onDelete}
+          onDelete={comments.deleteComment}
         />
       </div>
     );
