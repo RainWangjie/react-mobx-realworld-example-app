@@ -42,3 +42,8 @@
 
 - init 阶段， 实例化所有的 store（接近目前项目的做法），store 包括（page、module、global/ 视图上唯一对象），数据模型包含在 store 内；
 - 数据模型的定义可以用 type/interface 代替（陈垚的想法）
+
+附：尝试的各种失败的想法
+
+![mvvm](http://o830wpqbz.bkt.clouddn.com/mvvm.png)
+![mvvm](http://o830wpqbz.bkt.clouddn.com/mvvm-2.png)
